@@ -1,0 +1,533 @@
+@import "bourbon"
+@import "vars.sass"
+
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans')
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+@mixin button_style()
+	cursor: pointer
+	display: block
+	box-sizing: border-box
+	border: 1px solid #0275d8
+	border-radius: 4px
+	font-size: 12px
+	text-align: center
+	color: #0275d8
+	background-color: #fff
+
+//Custom Styles Here
+body
+	font-family: 'Open Sans', sans-serif
+
+.header
+	width: 100%
+	height: 50px
+	background-color: #3097d1
+	&--inner
+		width: 1200px
+		margin: 0 auto
+		&__left 
+			float: left
+			margin-top: 10px
+			&__logo
+				img 
+					float: left
+					display: block
+			&__menu
+				float: left
+				&__item
+					display: inline
+					margin-left: 18px
+					a 
+						font-size: 14px
+						color: #a2d0ea
+					a:hover
+						color: white !important
+						text-decoration: none
+
+		&__right
+			float: right
+			margin-top: 8px
+			&__search
+				float: left	
+				input
+					padding-left: 10px
+					width: 180px
+					height: 30px
+					border-radius: 5px
+					border: 1px solid #1c73a5
+				input:focus
+					width: 300px
+			&__bell
+				float: left
+				margin: 9px 16px 0 22px
+				width: 17px
+				height: 18px
+				background-image: url('../img/Bell icon.png')
+			&__bell:hover
+				background-image: url('../img/Bell icon hover.png')
+			&__photo
+				float: left
+				input
+					display: none
+				&__menu
+					position: absolute
+					top: 45px
+					left: 1180px
+					background-color: #fff
+					width: 150px
+					height: 50px
+					border: 1px solid #d4dbe0
+					border-radius: 5px
+					font-size: 14px
+					z-index: 555
+					display: flex
+					align-items: center
+					justify-content: space-around
+					visibility: hidden
+				input:checked + label + label
+					visibility: visible
+.wrapper
+	p 
+		margin: 0
+	width: 1200px
+	margin: 0 auto
+	.leftsidebar
+		width: 275px
+		float: left
+		margin-top: 20px
+		margin-right: 30px
+		&--info__name
+			p 
+				text-align: center
+				font-size: 14
+		&--info
+			border: 1px solid #d4dbe0
+			border-radius: 5px
+			padding-bottom: 35px
+			&__img
+				display: block
+				margin-left: 89px
+				margin-top: -48px
+			&__name
+				p, span 
+					font-size: 14px
+				span 
+					color: #868e8e
+					text-align: center
+					display: block
+					width: 100%
+			&__block	
+				width: 160px
+				margin: 0 auto
+				margin-top: 25px	
+				cursor: pointer
+				&__friends
+					width: 50%
+					height: 40px
+					float: left
+					border-right: 1px solid #d4dbe0
+					text-align: center
+					font-size: 14px
+					p 
+						margin: 0
+						color: #868e8e
+						cursor: pointer
+					span 
+						cursor: pointer
+					&__input 
+						display: none
+					&__users 
+						&__label
+							position: fixed
+							top: 0
+							left: 0
+							height: 2000px
+							width: 2000px
+							background-color: black
+							opacity: 0.5
+							z-index: 1
+						display: none
+						position: fixed
+						top: 30px
+						left: 433px
+						width: 450px
+						background-color: #fff
+						z-index: 5	
+						&__top
+							height: 60px
+							padding-top: 15px
+							padding-left: 20px
+							padding-right: 20px
+							border: 1px solid #eceeef
+							p 
+								display: block
+								float: left
+								font-size: 22px
+							label
+								float: right
+						&__user
+							height: 75px
+							padding-top: 15px
+							padding-right: 20px
+							border: 1px solid #eceeef
+							img 
+								display: block
+								float: left
+								margin-right: 15px
+								margin-left: 15px
+							p,span 
+								font-size: 12px
+								text-align: left
+							span 
+								color: #868e8e
+							&__name
+								float: left
+							&__btn
+								margin-top: 10px
+								float: right
+								width: 50px
+								height: 25px
+								padding-top: 3px
+								border: 1px solid #cccccc
+								border-radius: 5px
+								&:hover
+									background-color: #e6e6e6
+								a 
+									font-size: 12px	
+									color: #515253
+								label
+									display: none
+					&__input:checked + label + div
+						display: block
+						
+					
+				&__enemies
+					text-align: center
+					float: left
+					padding-left: 15px
+					height: 40px
+					text-align: center
+					font-size: 14px
+					p 
+						margin: 0
+						color: #868e8e
+				&:after
+					content: ""
+					display: block
+					clear: both
+			&__users
+				width: 450px
+				z-index: 9999
+		&--about
+			border: 1px solid #d4dbe0
+			border-radius: 5px
+			padding-left: 20px
+			padding-bottom: 35px
+			margin-top: 20px	
+			&__top
+				display: flex
+				align-items: baseline
+				margin-top: 25px
+				margin-bottom: 20px
+				p
+					font-size: 14px	
+				a 
+					color: #5193e0
+					font-size: 11px	
+					&:hover
+						color: #014c8c
+			&__item
+				display: flex
+				align-items: center
+				margin-bottom: 15px
+				font-size: 14px
+				p 
+					margin-right: 3px
+					margin-left: 15px
+				&__img 
+					width: 16px
+					img 
+						display: block
+						margin: 0 auto
+				a:hover 
+					color: #014c8c 
+		&--photo
+			border: 1px solid #d4dbe0
+			border-radius: 5px
+			padding-left: 20px
+			padding-bottom: 35px
+			margin-top: 20px
+			&__top
+				display: flex
+				align-items: baseline
+				margin-top: 25px
+				margin-bottom: 20px
+			&__img
+				display: flex
+				flex-wrap: wrap
+				input
+					display: none
+				&__small_img
+					cursor: pointer
+					width: 115px
+					height: 115px
+					background-image: url('../img/small-photo-1.png')
+					margin-right: 10px
+				&__big_img
+					display: none	
+				input:checked + label + label
+					display: block
+					z-index: 10
+					position: fixed
+					top: 0
+					left: 0
+					display: flex
+					justify-content: center
+					//align-items: center
+					width: 1360px
+					height: 800px
+					background-color: #ffffff
+					img 
+						display: block
+						width: 610px
+						height: 620px
+				img 
+					margin-right: 10px
+					margin-bottom: 10px
+	&--content
+		float: left
+		width: 585px
+		border: 1px solid #e0e0e0
+		margin-bottom: 20px
+		&__message
+			margin: 22px auto
+			width: 537px
+			height: 33px
+			border: 1px solid #e0e0e0
+			box-sizing: border-box
+			input  
+				padding-left: 10px
+				width: 491px
+				height: 30px
+				float: left
+				display: block
+				border: none  
+			&__camera
+				width: 44px
+				height: 33px
+				float: left
+				text-align: center
+				border-left: 1px solid #e0e0e0
+			&__camera:hover 
+				background-color: #e6e6e6
+		&:after
+            content: ""
+            display: block
+            clear: both
+		&__post
+			padding: 20px
+			width: 100%
+			border: 1px solid #e0e0e0
+			b  
+				color: #2e2b38
+			&__photo  
+				display: block
+				float: left
+			&__inner, &__inner1
+				width: 465px
+				float: left
+				margin-left: 15px
+				display: flex
+				flex-wrap: wrap
+				p  
+					font-size: 13px	
+					margin-top: 0px
+					color: #868e8e
+					display: block
+				&__name
+					width: 100%
+					display: flex
+					justify-content: space-between
+					p  
+						font-size: 13px	
+						margin-top: 0px
+						color: #868e8e
+					span  
+						font-size: 13px
+						color: #868e8e
+				&__img
+					margin-top: 5px
+					margin-bottom: 15px
+					img 
+						margin-top: 10px
+					img.left
+						margin-right: 10px
+				&__comment1
+					margin-top: 15px
+					display: flex
+					align-items: flex-start
+					p
+						margin-left: 20px
+			&__inner1
+				width: 455px
+				float: left
+				//margin-left: 20px
+				&__feedback
+					display: flex
+					align-items: flex-start
+					p 
+						margin-left: 20px
+				p
+					
+					box-sizing: border-box
+				&__image
+					margin-top: 25px
+					margin-bottom: 40px
+			&:after
+				content: ""
+				display: block
+				clear: both	
+	.rightsidebar
+		float: right
+		width: 280px
+		margin-top: 20px
+		input
+			display: none
+		input:checked + div
+			display: none
+		&--visit 
+			border: 1px solid #e6d0a1
+			border-radius: 5px
+			font-size: 14px
+			padding: 10px 18px
+			&__link
+				float: left
+				width: 175px
+				a 
+					color: #66512c
+				p 
+					color: #988969
+			label
+				margin-top: 3px
+				float: right
+				width: 9px
+				height: 9px
+				background-image: url('../img/Close .png')	
+			label:hover
+				background-image: url('../img/close.png')	
+			&:after
+					content: ""
+					display: block
+					clear: both	
+		&--sponsored
+			border: 1px solid #e0e0e0
+			border-radius: 5px
+			font-size: 14px
+			padding: 20px 0 18px 18px
+			margin-top: 14px
+			img 
+				display: block
+				margin-top: 16px
+				margin-bottom: 14px
+			span 
+				color: #868e8e
+			&__link, a 
+				height: 24px
+				width: 80px
+				display: block
+				border: 1px solid #0275d8
+				border-radius: 5px
+				color: #0275d8
+				text-decoration: none
+				font-size: 12px
+				text-align: center
+				padding-top: 2px
+				margin-top: 38px
+				&:hover
+					background-color: #0275d8
+					color: #ffffff
+				&:active
+					width: 84px
+					height: 28px
+					border: 2px solid #81baec
+		&--likes
+			border: 1px solid #e0e0e0
+			border-radius: 5px
+			font-size: 14px
+			margin-top: 14px
+			&__top
+				display: flex
+				margin-left: 20px
+				margin-top: 15px
+			&__user
+				display: flex
+				margin-top: 15px
+				margin-left: 20px
+				&__info
+					margin-top: 4px
+					margin-left: 15px
+					span 
+						color: #868e8e
+					&__follow
+						display: flex
+						align-items: center
+						border: 1px solid #0275d8
+						border-radius: 5px
+						margin-top: 5px
+						width: 65px
+						height: 22px
+						p 
+							font-size: 12px
+						img 
+							height: 12px
+							margin: 0 6px
+			&__bottom 
+				border-top: 1px solid #e0e0e0
+				margin-top: 32px
+				padding: 16px 0 14px 20px
+				color: #868e8e
+		&--links
+			display: flex
+			flex-wrap: wrap
+			border: 1px solid #e0e0e0
+			border-radius: 5px
+			font-size: 14px
+			margin-top: 14px
+			padding: 24px 20px 22px 20px
+			a 
+				margin-right: 8px
+			p 
+				margin-right: 8px
+				color: #868e8e
+
+	height: 100%
+	margin: 0 auto
+	position: relative
+
+//ALWAYS END
+@import "media"
